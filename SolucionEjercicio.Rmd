@@ -70,9 +70,24 @@ Ahora que tenemos los datos cargados empezamos mirando las características de a
 ```{r}
 help("mammals")
 ```
-Mammals es un conjunto de datos que contiene muestras de 62 especies de mamíferos del peso medio de sus cerebros y sus cuerpos. En particular, las variables se agrupan en las columnas body,brain,name (nombre commún de las especies).
+Mammals es un conjunto de datos que contiene muestras de 62 especies de mamíferos del peso medio de sus cerebros y sus cuerpos. En particular, las variables se agrupan en las columnas body y brain, y cada fila tiene como nombre el nombre commún de la especie.
 
 ```{r}
 help("Animals2")
 ```
-El conjunto de datos Animals2 contiene datos de 65 especies de animales del peso medio de sus cerebros y sus cuerpos, siendo 62 de ellos los datos del conjunto de datos mammals. El conjunto de datos Animals2 no contiene la variable name.
+El conjunto de datos Animals2 contiene datos de 65 especies de animales del peso medio de sus cerebros y sus cuerpos, siendo 62 de ellos los datos del conjunto de datos mammals.
+
+```{r}
+dim_1 <- dim(df_mammals)
+head_1 <- head(df_mammals)
+tail_1 <- tail(df_mammals)
+str_1 <- str(df_mammals)
+```
+El data frame Mammals tiene `dim_1[[1]]` instancias, `dim_1[[2]]` variables, las 6 primeras observaciones son `head_1`, mientras que las 6 últimas son `tail_1`.
+```{r}
+dim_2 <- dim(df_animals)
+head_2 <- head(df_animals)
+tail_2 <- tail(df_animals)
+str_2 <- str(df_animals)
+```
+El data frame Mammals tiene `dim_2[[1]]` instancias, `dim_2[[2]]` variables, las 6 primeras observaciones son `head_2`, mientras que las 6 últimas son `tail_2`.
