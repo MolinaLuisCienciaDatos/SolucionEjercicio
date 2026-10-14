@@ -50,3 +50,29 @@ language:
     remark: 'Nota: '
     solution: 'Solución. '
 ---
+Empezamos verificando si los paquetes necesarios están instalados, y en caso de que no lo estén los instalamos. Después cargamos los datos deseados.
+```{r}
+if(requireNamespace("MASS")){
+  library(MASS)
+}else{
+  install.packages(MASS)
+}
+df_mammals <- MASS::mammals
+
+if(requireNamespace("robustbase")){
+  library(robustbase)
+}else{
+install.packages("robustbase")}
+
+df_animals <- robustbase::Animals2
+```
+Ahora que tenemos los datos cargados empezamos mirando las características de ambos conjuntos
+```{r}
+help("mammals")
+```
+Mammals es un conjunto de datos que contiene muestras de 62 especies de mamíferos del peso medio de sus cerebros y sus cuerpos. En particular, las variables se agrupan en las columnas body,brain,name (nombre commún de las especies).
+
+```{r}
+help("Animals2")
+```
+El conjunto de datos Animals2 contiene datos de 65 especies de animales del peso medio de sus cerebros y sus cuerpos, siendo 62 de ellos los datos del conjunto de datos mammals. El conjunto de datos Animals2 no contiene la variable name.
