@@ -81,14 +81,14 @@ El conjunto de datos Animals2 contiene datos de 65 especies de animales del peso
 dim_1 <- dim(df_mammals)
 head_1 <- head(df_mammals)
 tail_1 <- tail(df_mammals)
-str_1 <- str(df_mammals)
+str(df_mammals)
 ```
 El data frame Mammals tiene `dim_1[[1]]` instancias, `dim_1[[2]]` variables, las 6 primeras observaciones son `head_1`, mientras que las 6 últimas son `tail_1`.
 ```{r}
 dim_2 <- dim(df_animals)
 head_2 <- head(df_animals)
 tail_2 <- tail(df_animals)
-str_2 <- str(df_animals)
+str(df_animals)
 ```
 El data frame Mammals tiene `dim_2[[1]]` instancias, `dim_2[[2]]` variables, las 6 primeras observaciones son `head_2`, mientras que las 6 últimas son `tail_2`.
 
@@ -111,4 +111,14 @@ Vamos a seleccionar los animales que se encuentran en ambos conjuntos de datos
 ```{r}
 
 commonAnimals <- data.frame(df_animals[intersect(rownames(df_mammals),rownames(df_animals)),])
+head(commonAnimals)
 ```
+Vamos a ver que animales no están en ambos conjuntos
+```{r}
+
+notBothAnimals <- setdiff(rownames(df_mammals),rownames(df_animals))
+print(notBothAnimals)
+l <- dim(notBothAnimals)
+all(notBothAnimals %in% rownames(df_mammals))
+```
+Los animales que no se encuentran en ambos conjuntos han resultado ser `l`, y en particular todos son mamíferos, en particular, del conjunto de datos Mammals.
