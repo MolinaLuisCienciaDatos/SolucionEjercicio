@@ -92,12 +92,23 @@ str_2 <- str(df_animals)
 ```
 El data frame Mammals tiene `dim_2[[1]]` instancias, `dim_2[[2]]` variables, las 6 primeras observaciones son `head_2`, mientras que las 6 últimas son `tail_2`.
 
+
+Ahora vamos  aver cuales son los nombres de las columnas y filas de los conjuntos de datos.
+
+Para empezar los de Mammals
 ```{r}
 rownames(df_mammals)
 colnames(df_mammals)
 ```
 
+Por último los de Animals2
 ```{r}
 rownames(df_animals)
 colnames(df_animals)
+```
+
+Vamos a seleccionar los animales que se encuentran en ambos conjuntos de datos
+```{r}
+
+commonAnimals <- data.frame(df_animals[intersect(rownames(df_mammals),rownames(df_animals)),])
 ```
